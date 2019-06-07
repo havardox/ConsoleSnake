@@ -8,8 +8,8 @@ namespace ConsoleSnake
 {
     class Sprite
     {
-        int CoordinateX;
-        int CoordinateY;
+        public int CoordinateX;
+        public int CoordinateY;
         public Sprite(int coordinateX, int coordinateY)
         {
             CoordinateX = coordinateX;

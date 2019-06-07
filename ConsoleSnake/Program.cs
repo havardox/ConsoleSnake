@@ -10,7 +10,8 @@ namespace ConsoleSnake
     {
         static void Main(string[] args)
         {
-            
+            Board board = new Board(0, 0, Console.WindowWidth, Console.WindowHeight);
+            board.GenerateBoard();
         }
     }
 }
