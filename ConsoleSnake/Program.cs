@@ -10,6 +10,7 @@ namespace ConsoleSnake
     {
         static void Main(string[] args)
         {
+            
         }
     }
 }
