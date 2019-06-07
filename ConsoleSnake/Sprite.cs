@@ -10,10 +10,5 @@ namespace ConsoleSnake
     {
         public int CoordinateX;
         public int CoordinateY;
-        public Sprite(int coordinateX, int coordinateY)
-        {
-            CoordinateX = coordinateX;
-            CoordinateY = coordinateY;
-        }
     }
 }

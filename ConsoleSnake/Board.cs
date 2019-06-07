@@ -10,7 +10,7 @@ namespace ConsoleSnake
     {
         int Width;
         int Height;
-        public Board(int coordinateX, int coordinateY, int width, int height) : base(coordinateX, coordinateY)
+        public Board(int coordinateX, int coordinateY, int width, int height)
         {
             CoordinateX = coordinateX;
             CoordinateY = coordinateY;
