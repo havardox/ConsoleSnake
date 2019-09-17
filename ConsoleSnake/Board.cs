@@ -6,27 +6,29 @@ using System.Threading.Tasks;
 
 namespace ConsoleSnake
 {
-    class Board : Sprite
+    public class Board : ISprite
     {
-        int Width;
-        int Height;
+        public int Width { get; set; }
+        public int Height { get; set; }
+        public int CoordinateX { get; set; }
+        public int CoordinateY { get; set; }
         public Board(int coordinateX, int coordinateY, int width, int height)
         {
             CoordinateX = coordinateX;
             CoordinateY = coordinateY;
-            Width = width;
-            Height = height;
+            Width = width - 3;
+            Height = height - 2;
         }
 
-        public void GenerateBoard()
+        public void Generate()
         {
-            for (int i = CoordinateX; i < Height; i++)
+            for (int i = CoordinateY; i < Height + 2; i++)
             {
-                int increment = i == 0 || i == Height - 1
+                int increment = i == CoordinateY || i == Height + 1
                 ? 2
-                : Width - 2;
-                for(int j = CoordinateY; j < Width; j += increment)
-                {
+                : Width - CoordinateX + 1;
+                for(int j = CoordinateX; j < Width + 3; j += increment)
+                    {
                     Console.SetCursorPosition(j, i);
                     Console.Write("{}");
                 }

@@ -10,8 +10,14 @@ namespace ConsoleSnake
     {
         static void Main(string[] args)
         {
-            Board board = new Board(0, 0, Console.WindowWidth, Console.WindowHeight);
-            board.GenerateBoard();
+            Board board = new Board(0, 0, Console.WindowWidth, Console.WindowHeight - 10);
+            board.Generate();
+            Food food = new Food('O', ConsoleColor.Green);
+            food.Place(board);
+            while (true)
+            {
+                
+            }
         }
     }
 }

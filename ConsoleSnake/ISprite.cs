@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ConsoleSnake
 {
-    class Sprite
+    public interface ISprite
     {
-        public int CoordinateX;
-        public int CoordinateY;
+        int CoordinateX { get; set; }
+        int CoordinateY { get; set; }
     }
 }
