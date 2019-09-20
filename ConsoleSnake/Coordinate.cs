@@ -8,6 +8,7 @@ namespace ConsoleSnake
 {
     public class Coordinate
     {
-        public Tuple<int, int> Coordinate { get; set; }
+        public int X { get; set; }
+        public int Y { get; set; }
     }
 }

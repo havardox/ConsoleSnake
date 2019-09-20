@@ -10,15 +10,14 @@ namespace ConsoleSnake
     {
         public char Symbol { get; set; }
         public ConsoleColor Color { get; set; }
-        public override Coordinate Coordinate
+
+        public override void Place()
         {
-            set
-            {
-                Console.ForegroundColor = Color;
-                Console.SetCursorPosition(Coordinate.X, Coordinate.Y);
-                Console.Write(Symbol);
-                Console.ResetColor();
-            }
+        
+            Console.ForegroundColor = Color;
+            Console.SetCursorPosition(Coordinate.X, Coordinate.Y);
+            Console.Write(Symbol);
+            Console.ResetColor();
         }
     }
 }

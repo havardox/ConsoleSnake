@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace ConsoleSnake
 {
-    public class Board : ISprite
+    public class Board : Sprite
     {
         public int Width { get; set; }
         public int Height { get; set; }
-        public Coordinate Coordinate { get; set; }
         public Board(int width, int height, Coordinate coordinate)
         {
             Width = width - 3;
@@ -18,7 +17,7 @@ namespace ConsoleSnake
             Coordinate = coordinate;
         }
 
-        public void Generate()
+        public override void Place()
         {
             for (int i = Coordinate.Y; i < Height + 2; i++)
             {

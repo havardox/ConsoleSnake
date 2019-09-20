@@ -8,6 +8,7 @@ namespace ConsoleSnake
 {
     public abstract class Sprite
     {
-        public virtual Coordinate Coordinate { get; set; }
+        public Coordinate Coordinate { get; set; }
+        public abstract void Place();
     }
 }
