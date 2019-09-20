@@ -6,27 +6,19 @@ using System.Threading.Tasks;
 
 namespace ConsoleSnake
 {
-    class Food : ICharacterSprite
+    class Food : CharacterSprite
     {
-        public int CoordinateX { get; set; }
-        public int CoordinateY { get; set; }
-        public char Symbol { get; set; }
-        public ConsoleColor Color { get; set; }
-
-        public Food(char symbol, ConsoleColor color)
+        Board Board;
+        public Food(char symbol, ConsoleColor color, Board board)
         {
             Symbol = symbol;
             Color = color;
+            Board = board;
+            Random rnd = new Random();
+            Coordinate.X = rnd.Next(1, board.Width + 1);
+            Coordinate.Y = rnd.Next(1, board.Height + 1);
         }
 
-        public void Place(Board board)
-        {
-            Random rnd = new Random();
-            Console.ForegroundColor = Color;
-            CoordinateX = rnd.Next(1, board.Width + 1);
-            CoordinateY = rnd.Next(1, board.Height + 1);
-            Console.SetCursorPosition(CoordinateX, CoordinateY);
-            Console.Write(Symbol);
-        }
+        public void Place()
     }
 }

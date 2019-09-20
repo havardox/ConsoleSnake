@@ -10,24 +10,22 @@ namespace ConsoleSnake
     {
         public int Width { get; set; }
         public int Height { get; set; }
-        public int CoordinateX { get; set; }
-        public int CoordinateY { get; set; }
-        public Board(int coordinateX, int coordinateY, int width, int height)
+        public Coordinate Coordinate { get; set; }
+        public Board(int width, int height, Coordinate coordinate)
         {
-            CoordinateX = coordinateX;
-            CoordinateY = coordinateY;
             Width = width - 3;
             Height = height - 2;
+            Coordinate = coordinate;
         }
 
         public void Generate()
         {
-            for (int i = CoordinateY; i < Height + 2; i++)
+            for (int i = Coordinate.Y; i < Height + 2; i++)
             {
-                int increment = i == CoordinateY || i == Height + 1
+                int increment = i == Coordinate.Y || i == Height + 1
                 ? 2
-                : Width - CoordinateX + 1;
-                for(int j = CoordinateX; j < Width + 3; j += increment)
+                : Width - Coordinate.X + 1;
+                for(int j = Coordinate.X; j < Width + 3; j += increment)
                     {
                     Console.SetCursorPosition(j, i);
                     Console.Write("{}");

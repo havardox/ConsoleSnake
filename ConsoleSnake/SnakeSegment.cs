@@ -6,17 +6,13 @@ using System.Threading.Tasks;
 
 namespace ConsoleSnake
 {
-    class SnakeSegment : ICharacterSprite
+    class SnakeSegment : CharacterSprite
     {
-        public int CoordinateX { get; set; }
-        public int CoordinateY { get; set; }
-        public char Symbol { get; set; }
-        public ConsoleColor Color { get; set; }
-
-        public SnakeSegment(char symbol, ConsoleColor color)
+        public SnakeSegment(char symbol, ConsoleColor color, Coordinate coordinate)
         {
             Symbol = symbol;
             Color = color;
+            Coordinate = coordinate;
         }
 
         public void Move(Direction direction)
@@ -24,16 +20,16 @@ namespace ConsoleSnake
             switch (direction)
             {
                 case Direction.Down:
-                    CoordinateY -= 1;
+                    Coordinate.Y -= 1;
                     break;
                 case Direction.Up:
-                    CoordinateY += 1;
+                    Coordinate.X += 1;
                     break;
                 case Direction.Left:
-                    CoordinateX -= 1;
+                    Coordinate.X -= 1;
                     break;
                 case Direction.Right:
-                    CoordinateX += 1;
+                    Coordinate.X += 1;
                     break;
             }
         }

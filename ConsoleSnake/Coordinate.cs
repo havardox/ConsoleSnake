@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace ConsoleSnake
 {
-    interface ICharacterSprite : ISprite
+    public class Coordinate
     {
-        char Symbol { get; set; }
-        ConsoleColor Color { get; set; }
+        public Tuple<int, int> Coordinate { get; set; }
     }
 }
